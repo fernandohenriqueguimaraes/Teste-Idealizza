@@ -2,7 +2,8 @@
 
 Banco de Dados (MySQL)
 
-    A fim de criar a estrutura do banco de dados, foi disponibilizado na pasta Dump Banco MySQL a estrutura de banco de dados desenhada para esta aplicação. Entretanto pode-se gerar a estrutura do banco e geração de dados através do Migrations e Seeders.
+    A fim de criar a estrutura do banco de dados, foi disponibilizado na pasta Dump Banco MySQL a estrutura de banco de dados desenhada para esta aplicação. 
+    Entretanto pode-se gerar a estrutura do banco e geração de dados através do Migrations e Seeders.
 	
     Nome do Banco: Teste_Idealizza
 
