@@ -141,21 +141,42 @@ class AlunoController extends Controller
             $valor = $request->get('valorBusca');
             $ativo = $request->get('ativo');
 
-            $query = DB::table('alunos');
-
-            if (!empty($valor)||!is_null($valor)) {
-                $query->whereRaw($campo.' like "%'.$valor.'%"');
-            }
-
-            if ($ativo == 1) {
-                $query->whereRaw('ativo = 1');
-            } else if($ativo == 0) {
-                $query->whereRaw('ativo = 0');
-            }
-
-            $alunos = $query->orderBy('id')->paginate(10);
+            $alunos = $this->buscarQuery($campo, $valor, $ativo, true);
 
             return view('aluno.index', compact('alunos'));
+    }
+
+    public function buscarRestAPI() {
+
+        $campo = isset($_GET["campo"]) ? $_GET["campo"] : "";
+        $valor = isset($_GET["valor"]) ? $_GET["valor"] : "";
+        $ativo = isset($_GET["ativo"]) ? $_GET["ativo"] : "";
+
+        return response()->json($this->buscarQuery($campo, $valor, $ativo, false));
+    }
+
+    public function buscarQuery($campo, $valor, $ativo, $paginate) {
+        $query = DB::table('alunos');
+
+        if (!empty($campo)) {
+            if (!empty($valor)) {
+                $query->whereRaw($campo . ' like "%' . $valor . '%"');
+            }
+        }
+
+        if (!empty($ativo)) {
+            if ($ativo == 1) {
+                $query->whereRaw('ativo = 1');
+            } else if ($ativo == 0) {
+                $query->whereRaw('ativo = 0');
+            }
+        }
+
+        if ($paginate) {
+            return $query->orderBy('id')->paginate(10);
+        } else {
+            return $query->orderBy('id')->get();
+        }
     }
 
 }

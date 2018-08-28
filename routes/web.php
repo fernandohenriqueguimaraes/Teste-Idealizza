@@ -40,3 +40,10 @@ Route::get('/cobranca/editar/{id}', ['uses'=>'CobrancaController@editar', 'as' =
 Route::put('/cobranca/atualizar/{id}', ['uses'=>'CobrancaController@atualizar', 'as' => 'cobranca.atualizar']);
 Route::get('/cobranca/deletar/{id}', ['uses'=>'CobrancaController@deletar', 'as' => 'cobranca.deletar']);
 
+// EndPoints REST para entidade aluno
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::get('/aluno/buscar', 'AlunoController@buscarRestAPI');
+});
+
+
