@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Aluno;
 use App\Http\Requests\AlunoRequest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session as Session;
-use Illuminate\Support\Facades\Input;
 
 class AlunoController extends Controller
 
@@ -137,23 +137,25 @@ class AlunoController extends Controller
      */
     public function buscar(Request $request)
     {
-        if (empty($request->get('valorBusca'))) {
             $campo = $request->get('tipoBusca');
             $valor = $request->get('valorBusca');
             $ativo = $request->get('ativo');
-            $query = Aluno::where($campo, 'like', '%'.$valor.'%');
-            if ($ativo == 1) {
-                $query->where('ativo', '=', 1);
-            } else {
-                $query->where('ativo', '=', 0);
+
+            $query = DB::table('alunos');
+
+            if (!empty($valor)||!is_null($valor)) {
+                $query->whereRaw($campo.' like "%'.$valor.'%"');
             }
 
-            $alunos = $query->paginate(10);
-            return redirect()->route('aluno.index', compact('alunos'));
+            if ($ativo == 1) {
+                $query->whereRaw('ativo = 1');
+            } else if($ativo == 0) {
+                $query->whereRaw('ativo = 0');
+            }
 
-        } else {
-            return $this->index();
-        }
+            $alunos = $query->orderBy('id')->paginate(10);
+
+            return view('aluno.index', compact('alunos'));
     }
 
 }

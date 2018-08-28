@@ -10,7 +10,7 @@
                     <div class="form-control">
                         <form action="{{ route('aluno.buscar') }}" method="get">
 
-                            <div class="col-md-3 float-left">
+                            <div class="col-md-6">
                             <div class="form-group">
                                 <label for="tipoBusca">Opção de Busca</label>
                                 <select class="form-control" id="tipoBusca" name="tipoBusca">
@@ -19,14 +19,17 @@
                                 </select>
                             </div>
                             </div>
-                            <div class="col-md-9 float-left">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                 <label for="valorBusca">Valor de Busca:</label>
                                 <input type="text" class="form-control" id="valorBusca" name="valorBusca" placeholder="Se CPF, Digitar somente os números">
                                 </div>
                             </div>
 
-                                <div class="float-left col-md-12">
+                                <div class="col-md-6">
+                            <div class="radio">
+                                <label><input type="radio" name="ativo" value=2>Alunos Ativos e Inativos</label>
+                            </div>
                             <div class="radio">
                                 <label><input type="radio" name="ativo" value=1 checked>Alunos Ativos</label>
                             </div>
@@ -35,7 +38,7 @@
                             </div>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <button type="submit" style="color:white" class="btn btn-info"><b>Buscar</b></button>
                                 </div>
