@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Aluno;
-use App\Cobranca;
+
 class AlunosTableSeed extends Seeder
 
 {
@@ -13,9 +12,12 @@ class AlunosTableSeed extends Seeder
      */
     public function run()
     {
-        factory('App\Aluno', 100)->create()->each(function (Aluno $aluno) {
-            $cobranca = factory('App\Cobranca')->create();
-            $cobranca->adicionarAluno($aluno);
+        factory(\App\Aluno::class, 100)->create()->each(function ($aluno) {
+            factory(App\Cobranca::class)->create([
+                'aluno_id' => [$aluno->id]
+            ])->make();
         });
+
+
     }
 }

@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Aluno;
 use App\Http\Requests\AlunoRequest;
 use Illuminate\Support\Facades\Session as Session;
+use Illuminate\Support\Facades\Input;
+
 class AlunoController extends Controller
+
 {
     /**
      * Cria uma instância do controlador
@@ -126,4 +129,31 @@ class AlunoController extends Controller
         ]);
         return redirect()->route('aluno.index');
     }
+
+    /**
+     * Exibe a página com a lista de alunos filtrada
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function buscar(Request $request)
+    {
+        if (empty($request->get('valorBusca'))) {
+            $campo = $request->get('tipoBusca');
+            $valor = $request->get('valorBusca');
+            $ativo = $request->get('ativo');
+            $query = Aluno::where($campo, 'like', '%'.$valor.'%');
+            if ($ativo == 1) {
+                $query->where('ativo', '=', 1);
+            } else {
+                $query->where('ativo', '=', 0);
+            }
+
+            $alunos = $query->paginate(10);
+            return redirect()->route('aluno.index', compact('alunos'));
+
+        } else {
+            return $this->index();
+        }
+    }
+
 }

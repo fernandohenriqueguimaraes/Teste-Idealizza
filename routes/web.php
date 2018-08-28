@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Rotas da entidade Aluno
+// Rotas de CRUD da entidade Aluno
 Route::get('/aluno', ['uses'=>'AlunoController@index', 'as' => 'aluno.index']);
 Route::get('/aluno/adicionar', ['uses'=>'AlunoController@adicionar', 'as' => 'aluno.adicionar']);
 Route::post('/aluno/salvar', ['uses'=>'AlunoController@salvar', 'as' => 'aluno.salvar']);
@@ -30,7 +30,10 @@ Route::put('/aluno/atualizar/{id}', ['uses'=>'AlunoController@atualizar', 'as' =
 Route::get('/aluno/deletar/{id}', ['uses'=>'AlunoController@deletar', 'as' => 'aluno.deletar']);
 Route::get('/aluno/detalhe/{id}', ['uses'=>'AlunoController@detalhe', 'as' => 'aluno.detalhe']);
 
-// Rotas da entidade Cobrança
+// Rota de busca da entidade Aluno
+Route::get('/aluno/buscar', ['uses'=>'AlunoController@buscar', 'as' => 'aluno.buscar']);
+
+// Rotas de CRUD da entidade Cobrança
 Route::get('/cobranca/adicionar/{id}', ['uses'=>'CobrancaController@adicionar', 'as' => 'cobranca.adicionar']);
 Route::post('/cobranca/salvar/{id}', ['uses'=>'CobrancaController@salvar', 'as' => 'cobranca.salvar']);
 Route::get('/cobranca/editar/{id}', ['uses'=>'CobrancaController@editar', 'as' => 'cobranca.editar']);

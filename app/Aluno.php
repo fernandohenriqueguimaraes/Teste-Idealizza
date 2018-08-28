@@ -20,4 +20,9 @@ class Aluno extends Model
         return true;
     }
 
+    public function adicionarCobrancas(Cobranca $cobranca)
+    {
+        return $this->cobrancas()->save($cobranca);
+    }
+
 }

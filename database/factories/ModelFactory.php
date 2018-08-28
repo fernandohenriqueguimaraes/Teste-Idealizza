@@ -37,8 +37,8 @@ $factory->define(App\Aluno::class, function (Faker $faker) {
 $factory->define(App\Cobranca::class, function (Faker $faker) {
     return [
         'banco' => $faker->randomElements(["Santander", "Caixa", "Bradesco", "Itaú", "Banco do Brasil"]),
-        'agencia' => $faker->randomDigitNotNull,
-        'conta' => $faker->bankAccountNumber,
-        'mensalidade' => $faker->randomFloat(100, 900)
+        'agencia' => [$faker->randomDigit],
+        'conta' => [$faker->bankAccountNumber()],
+        'mensalidade' => [$faker->randomFloat(100, 900)]
     ];
 });
