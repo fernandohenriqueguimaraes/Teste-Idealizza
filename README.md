@@ -13,10 +13,27 @@ Aplicação em PHP (Laravel)
 
     1a Etapa: Desenvolvimento do CRUD de Alunos e Cobranças (Primeiras 4 horas) - Concluído
 
-    2a Etapa: Correção de bugs da primeira etapa e validação de formulários - Em desenvolvimento
+    2a Etapa: Filtro por Nome, CPF, Cidade e se aluno é Ativo ou Inativo (Primeiras 8 horas) - Concluído
 
-    3a Etapa: Filtro por Nome, CPF, Cidade e se aluno é Ativo ou Inativo - Concluído
+    3a Etapa: Consulta de Alunos via API Rest (Todos os Alunos Ativos, Aluno Específico através dos parâmetros CPF ou ID) (Primeiras 22 horas) - Concluído
+    
+    4a Etapa: Validação de formulários - Em desenvolvimento
+    
+API REST
 
-    4a Etapa: Consulta de Alunos via API Rest (Todos os Alunos Ativos, Aluno Específico através dos parâmetros CPF ou ID) - Pendente 
+    Para realizar uma busca de aluno, utilizar o endpoint api/aluno/buscar
+    Os parâmetros são:
+        - campo (Aceita os valores nome, cpf e cidade. Se não for incluso este parâmetro, não será realizado o filtro, logo retornará todos os alunos)
+        - valor (texto do parâmetro que deseja buscar, se não for incluso este parâmetro, não será realizado o filtro, logo retornará todos os alunos)
+        - ativo (Aceita os valores 1 para ativo e 0 para inativo, se colocar um valor diferente destes ou não inserir o parâmetro é retornado alunos ativos e inativos)
 
+    Exemplos:
+        - api/aluno/buscar (Retorna todos os alunos)
+        - api/aluno/buscar?campo=nome (Retorna todos os alunos)
+        - api/aluno/buscar?campo=nome&cpf= (Retorna todos os alunos)
+        - api/aluno/buscar?campo=nome&cpf=00010001001 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado)
+        - api/aluno/buscar?campo=nome&cpf=00010001001&ativo=1 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado e que estejam ativos)
+        - api/aluno/buscar?campo=nome&cpf=00010001001&ativo=0 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado e que estejam inativos)
+        - api/aluno/buscar?ativo=1 (Retorna todos os alunos que estejam ativos)
+        - api/aluno/buscar?ativo=3 (Retorna todos os alunos)
 
