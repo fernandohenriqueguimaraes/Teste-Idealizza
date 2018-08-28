@@ -15,7 +15,7 @@ Aplicação em PHP (Laravel)
 
     2a Etapa: Correção de bugs da primeira etapa e validação de formulários - Em desenvolvimento
 
-    3a Etapa: Filtro por Nome, CPF, Cidade e se aluno é Ativo ou Inativo - Pendente
+    3a Etapa: Filtro por Nome, CPF, Cidade e se aluno é Ativo ou Inativo - Concluído
 
     4a Etapa: Consulta de Alunos via API Rest (Todos os Alunos Ativos, Aluno Específico através dos parâmetros CPF ou ID) - Pendente 
 
