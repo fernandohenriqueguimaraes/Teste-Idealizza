@@ -16,6 +16,7 @@
                                 <select class="form-control" id="tipoBusca" name="tipoBusca">
                                     <option value="nome">Busca por Nome</option>
                                     <option value="cpf">Busca por CPF</option>
+                                    <option value="cidade">Busca por Cidade</option>
                                 </select>
                             </div>
                             </div>
@@ -58,6 +59,7 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">CPF</th>
                                     <th scope="col">E-mail</th>
+                                    <th scope="col">Cidade</th>
                                     <th scope="col" align="center">Editar</th>
                                     <th scope="col" align="center">Excluir</th>
                                 </tr>
@@ -69,6 +71,7 @@
                                         <td><a href="{{ route('aluno.detalhe', $aluno->id) }}">{{ $aluno->nome }}</a></td>
                                         <td><a href="{{ route('aluno.detalhe', $aluno->id) }}">{{ $aluno->cpf }}</a></td>
                                         <td><a href="{{ route('aluno.detalhe', $aluno->id) }}">{{ $aluno->email }}</a></td>
+                                        <td><a href="{{ route('aluno.detalhe', $aluno->id) }}">{{ $aluno->cidade }}</a></td>
                                         <td align="center"><a href="{{ route('aluno.editar', $aluno->id) }}"><i style="color:black" class="material-icons">create</i></a></td>
                                         <td align="center"><a href="javascript:(confirm('Deseja realmente deletar esse registro?') ? window.location.href='{{ route('aluno.deletar', $aluno->id) }}' : false)"><i style="color:black" class="material-icons">delete_sweep</i></a></td>
                                     </tr>
