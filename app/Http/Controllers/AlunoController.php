@@ -148,8 +148,8 @@ class AlunoController extends Controller
 
     public function buscarRestAPI() {
 
-        $campo = isset($_GET["campo"]) ? $_GET["campo"] : "";
-        $valor = isset($_GET["valor"]) ? $_GET["valor"] : "";
+        $campo = isset($_GET["tipoBusca"]) ? $_GET["tipoBusca"] : "";
+        $valor = isset($_GET["valorBusca"]) ? $_GET["valorBusca"] : "";
         $ativo = isset($_GET["ativo"]) ? $_GET["ativo"] : "";
 
         return response()->json($this->buscarQuery($campo, $valor, $ativo, false));
