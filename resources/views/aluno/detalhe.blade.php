@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><b>Aluno: {{ $aluno->nome }}</b></div>
+                    <div class="card-header"><b>Detalhes</b> - Aluno: <a href="{{ route('aluno.detalhe', $aluno->id) }}">{{ $aluno->nome }}</a></div>
                     <div class="card-body">
                         <p><b>CPF:</b> {{ $aluno->cpf }}</p>
                         <p><b>Cidade:</b> {{ $aluno->cidade }}</p>

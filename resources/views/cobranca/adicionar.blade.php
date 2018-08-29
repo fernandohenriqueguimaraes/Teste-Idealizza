@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><b>Adicionar Cobrança</b></div>
+                    <div class="card-header"><b>Adicionar Cobrança</b> - Aluno: <a href="{{ route('aluno.detalhe', $aluno->id) }}">{{ $aluno->nome }}</a></div>
                     <div class="card-body">
 
                     <form action="{{ route('cobranca.salvar', $aluno->id) }}" method="post">
