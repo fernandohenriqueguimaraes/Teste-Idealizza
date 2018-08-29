@@ -27,9 +27,9 @@
 
 
     @if(\Illuminate\Support\Facades\Session::has('flash_message'))
-        <div class="container align-content-center">
+        <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10 col-md-offset-1" style="margin-left: auto; margin-right: auto; padding-top: 30px;">
                     <div align="center" class="alert {{ \Illuminate\Support\Facades\Session::get('flash_message')['class'] }}">
                         {{ \Illuminate\Support\Facades\Session::get('flash_message')['msg'] }}
                     </div>

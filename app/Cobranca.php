@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cobranca extends Model
 {
-    protected $fillable = ['agencia', 'conta', 'banco', 'mensalidade'];
+    protected $fillable = ['agencia', 'conta', 'banco', 'mensalidade', 'aluno_id'];
 
     public function aluno()
     {
