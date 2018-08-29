@@ -17,7 +17,7 @@ Aplicação em PHP (Laravel)
 
     3a Etapa: Consulta de Alunos via API Rest (Todos os Alunos Ativos, Aluno Específico através dos parâmetros CPF ou ID) (Primeiras 22 horas) - Concluído
     
-    4a Etapa: Validação de formulários - Em desenvolvimento
+    4a Etapa: Validação de formulários - Concluído
     
 API REST
 
