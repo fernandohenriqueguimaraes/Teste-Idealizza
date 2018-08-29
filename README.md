@@ -35,5 +35,6 @@ API REST
         - api/aluno/buscar?tipoBusca=nome&valorBusca=vivian&ativo=1 (Retorna todos os alunos que tiverem o nome exato ou parcial ao valor informado e que estejam ativos)
         - api/aluno/buscar?tipoBusca=cpf&valorBusca=00010001001&ativo=0 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado e que estejam inativos)
         - api/aluno/buscar?ativo=1 (Retorna todos os alunos que estejam ativos)
+        - api/aluno/buscar?ativo=0 (Retorna todos os alunos que estejam inativos)
         - api/aluno/buscar?ativo=3 (Retorna todos os alunos)
 
