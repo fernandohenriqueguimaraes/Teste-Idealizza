@@ -29,11 +29,11 @@ API REST
 
     Exemplos:
         - api/aluno/buscar (Retorna todos os alunos)
-        - api/aluno/buscar?campo=nome (Retorna todos os alunos)
-        - api/aluno/buscar?campo=nome&cpf= (Retorna todos os alunos)
-        - api/aluno/buscar?campo=nome&cpf=00010001001 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado)
-        - api/aluno/buscar?campo=nome&cpf=00010001001&ativo=1 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado e que estejam ativos)
-        - api/aluno/buscar?campo=nome&cpf=00010001001&ativo=0 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado e que estejam inativos)
+        - api/aluno/buscar?tipoBusca=nome (Retorna todos os alunos)
+        - api/aluno/buscar?tipoBusca=nome&valorBusca= (Retorna todos os alunos)
+        - api/aluno/buscar?tipoBusca=nome&valorBusca=00010001001 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado)
+        - api/aluno/buscar?tipoBusca=nome&valorBusca=00010001001&ativo=1 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado e que estejam ativos)
+        - api/aluno/buscar?tipoBusca=nome&valorBusca=00010001001&ativo=0 (Retorna todos os alunos que tiverem o cpf exato ou parcial ao valor informado e que estejam inativos)
         - api/aluno/buscar?ativo=1 (Retorna todos os alunos que estejam ativos)
         - api/aluno/buscar?ativo=3 (Retorna todos os alunos)
 
