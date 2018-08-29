@@ -23,8 +23,8 @@ API REST
 
     Para realizar uma busca de aluno, utilizar o endpoint api/aluno/buscar
     Os parâmetros são:
-        - campo (Aceita os valores nome, cpf e cidade. Se não for incluso este parâmetro, não será realizado o filtro, logo retornará todos os alunos)
-        - valor (texto do parâmetro que deseja buscar, se não for incluso este parâmetro, não será realizado o filtro, logo retornará todos os alunos)
+        - tipoBusca (Aceita os valores nome, cpf e cidade. Se não for incluso este parâmetro, não será realizado o filtro, logo retornará todos os alunos)
+        - valorBusca (texto do parâmetro que deseja buscar, se não for incluso este parâmetro, não será realizado o filtro, logo retornará todos os alunos)
         - ativo (Aceita os valores 1 para ativo e 0 para inativo, se colocar um valor diferente destes ou não inserir o parâmetro é retornado alunos ativos e inativos)
 
     Exemplos:
